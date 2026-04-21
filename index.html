@@ -283,7 +283,11 @@
           <a href="mailto:neiro@unisender.com">neiro@unisender.com</a>
         </div>
 
-        <form id="contact-form" class="form" novalidate>
+        <form id="contact-form" class="form" action="https://formspree.io/f/FORMSPREE_ID_PLACEHOLDER" method="POST" novalidate>
+          <div id="form-error" class="form-error" hidden role="alert">
+            Не удалось отправить. Попробуйте ещё раз или напишите на <a href="mailto:neiro@unisender.com">neiro@unisender.com</a> напрямую.
+          </div>
+
           <div class="field">
             <label for="name">Имя</label>
             <input type="text" id="name" name="name" required autocomplete="name" />
@@ -295,9 +299,18 @@
           </div>
 
           <div class="field">
+            <label for="telegram">Telegram</label>
+            <input type="text" id="telegram" name="telegram" autocomplete="off" placeholder="@username — по желанию" />
+          </div>
+
+          <div class="field">
             <label for="message">Сообщение</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
+
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="honeypot" />
+
+          <!-- TODO: checkbox согласия на обработку персональных данных + ссылка на политику -->
 
           <button type="submit" class="btn btn-primary btn-wide">Отправить</button>
         </form>
@@ -305,7 +318,7 @@
         <div id="form-success" class="form-success" hidden>
           <div class="form-success-icon">✓</div>
           <h3>Спасибо!</h3>
-          <p>Ваше сообщение отправлено. Отвечу в течение пары дней.</p>
+          <p>Сообщение отправилось. Отвечу в течение пары дней.</p>
         </div>
       </div>
     </section>
