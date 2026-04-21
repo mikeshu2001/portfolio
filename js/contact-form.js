@@ -19,6 +19,7 @@
       : `${len} / ${MAX}`;
     counter.classList.toggle('is-over', overflow);
     if (!submitting) button.disabled = overflow;
+    window.logger?.debug('form:counter:updated', { length: len, overflow });
   }
 
   message.addEventListener('input', updateCounter);
@@ -26,9 +27,14 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    window.logger?.info('form:submit:attempt', { messageLength: message.value.length });
 
     const lenCheck = validateMessage(message.value);
     if (!lenCheck.ok) {
+      window.logger?.warn('form:validation:failed', {
+        reason: 'too_long',
+        length: message.value.length,
+      });
       errorEl.textContent = lenCheck.error + '.';
       errorEl.hidden = false;
       return;
@@ -38,6 +44,7 @@
     errorEl.hidden = true;
 
     if (!form.checkValidity()) {
+      window.logger?.warn('form:validation:failed', { reason: 'invalid_fields' });
       form.reportValidity();
       return;
     }
@@ -46,6 +53,7 @@
     const originalText = button.textContent;
     button.disabled = true;
     button.textContent = 'Отправка…';
+    const startedAt = Date.now();
 
     try {
       const response = await fetch(form.action, {
@@ -55,10 +63,18 @@
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
+      window.logger?.info('form:submit:success', {
+        durationMs: Date.now() - startedAt,
+        status: response.status,
+      });
       form.hidden = true;
       success.hidden = false;
       success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } catch {
+    } catch (err) {
+      window.logger?.error('form:submit:error', {
+        errorMessage: String(err?.message || err),
+        durationMs: Date.now() - startedAt,
+      });
       errorEl.innerHTML = DEFAULT_ERROR_HTML;
       errorEl.hidden = false;
       button.textContent = originalText;

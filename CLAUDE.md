@@ -11,6 +11,8 @@
 - [docs/run.md](docs/run.md) — локальный запуск с live-reload
 - [docs/contact-form.md](docs/contact-form.md) — текущее состояние формы (заглушка) и контакты
 - [docs/contact-form-spec.md](docs/contact-form-spec.md) — спецификация рабочей формы (бэкенд, email, Telegram, honeypot)
+- [docs/message-length-spec.md](docs/message-length-spec.md) — спецификация ограничения длины сообщения (1000 символов)
+- [docs/logging-spec.md](docs/logging-spec.md) — спецификация логирования (модуль logger.js, уровни, PII-санитизация)
 - [docs/git.md](docs/git.md) — репо, ветка, идентичность коммитов, SSH
 - [docs/dont-do.md](docs/dont-do.md) — прошлые ошибки и табу
 - [docs/workflow.md](docs/workflow.md) — рабочий процесс: вопросы → спека → код → обновить доки
