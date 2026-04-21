@@ -1,0 +1,17 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.about-grid p {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,27 @@
+.section {
+  padding: 100px 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-intro {
+  margin-top: -16px;
+  margin-bottom: 32px;
+  font-size: 1.05rem;
+}
+
+.footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.88rem;
+  text-align: center;
+}
