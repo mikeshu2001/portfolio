@@ -13,3 +13,4 @@
 - [docs/contact-form-spec.md](docs/contact-form-spec.md) — спецификация рабочей формы (бэкенд, email, Telegram, honeypot)
 - [docs/git.md](docs/git.md) — репо, ветка, идентичность коммитов, SSH
 - [docs/dont-do.md](docs/dont-do.md) — прошлые ошибки и табу
+- [docs/workflow.md](docs/workflow.md) — рабочий процесс: вопросы → спека → код → обновить доки
