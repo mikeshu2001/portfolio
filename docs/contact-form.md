@@ -2,9 +2,9 @@
 
 ## Как работает сейчас
 
-Форма умеет отправлять данные через fetch, но в `action` стоит плейсхолдер `FORMSPREE_ID_PLACEHOLDER` — реальных отправок пока нет, сабмит показывает блок «Не удалось отправить».
+Форма подключена к Formspree (endpoint `https://formspree.io/f/xqewykjj`). На submit JS делает fetch; письма приходят на `shymovskaia73@gmail.com`. Honeypot-защита через поле `_gotcha` работает.
 
-Целевая архитектура (статический сайт на GitHub Pages + Formspree) и что осталось сделать — в [contact-form-spec.md](contact-form-spec.md).
+Архитектура и что осталось на потом (Telegram, согласие на ПД, автоответ) — в [contact-form-spec.md](contact-form-spec.md).
 
 ## Контакты, которые уже на сайте
 
