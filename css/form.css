@@ -41,6 +41,19 @@
   border-color: rgba(255, 100, 100, 0.4);
 }
 
+.message-counter {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 6px;
+  transition: color 0.2s ease;
+}
+
+.message-counter.is-over {
+  color: #ffb4b4;
+  font-weight: 500;
+}
+
 .honeypot {
   position: absolute;
   left: -9999px;

@@ -306,6 +306,7 @@
           <div class="field">
             <label for="message">Сообщение</label>
             <textarea id="message" name="message" rows="5" required></textarea>
+            <div id="message-counter" class="message-counter" aria-live="polite">0 / 1000</div>
           </div>
 
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="honeypot" />
@@ -331,6 +332,7 @@
   </footer>
 
   <script src="js/footer-year.js"></script>
+  <script src="js/validate-message.js"></script>
   <script src="js/contact-form.js"></script>
   <script src="js/card-hover.js"></script>
 </body>
