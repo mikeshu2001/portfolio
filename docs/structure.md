@@ -1,5 +1,13 @@
 # Структура файлов
 
+## В корне
+
+- `README.md` — публичная англоязычная витрина репозитория, быстрый старт и
+  ссылки на другие agentic-проекты.
+- `.github/workflows/tests.yml` — запуск `npm test` для push в `main` и pull
+  request.
+- `package.json` — метаданные и dependency-free команда тестов.
+
 ## HTML
 
 Единственный `index.html` — без сборки разбивать на партиалы не стали. В `<head>` подключены 12 `<link>` из `css/`, в конце `<body>` — 6 `<script>` из `js/` в порядке: `logger.js`, `page-events.js`, `footer-year.js`, `validate-message.js`, `contact-form.js`, `card-hover.js`. Порядок важен: `logger.js` должен загрузиться первым (все остальные используют `window.logger`), `validate-message.js` — до `contact-form.js` (тот вызывает `validateMessage`).
